@@ -1,6 +1,6 @@
 APPLICATION = internet-of-plants
 
-BOARD ?= iotlab-m3
+BOARD ?= native
 
 RIOTBASE ?= $(CURDIR)/../RIOT
 
