@@ -1,0 +1,13 @@
+FROM golang:1.9
+
+ENV LISTEN [::]:5683
+ENV BACKEND http://127.0.0.1/
+ENV ACCESSLOG /dev/stdout
+ENV ERRORLOG /dev/stderr
+
+# Install crosscoap
+RUN go get github.com/ibm-security-innovation/crosscoap/cmd/crosscoap
+
+WORKDIR /crosscoap
+
+CMD crosscoap -accesslog $ACCESSLOG -listen $LISTEN -errorlog $ERRORLOG -backend $BACKEND
