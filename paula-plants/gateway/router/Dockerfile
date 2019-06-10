@@ -30,9 +30,9 @@ RUN wget https://sourceforge.net/projects/flex/files/flex-2.6.0.tar.bz2 && tar x
     && make && make install
 
 # Install radvd
-RUN wget https://github.com/linux-wpan/radvd/archive/6lowpan.zip && unzip 6lowpan.zip
-    && cd radvd-6lowpan && ./autogen.sh
-    && ./configure --prefix=/usr/local --sysconfdir=/etc --mandir=/usr/share/man
+RUN wget https://github.com/linux-wpan/radvd/archive/6lowpan.zip && unzip 6lowpan.zip \
+    && cd radvd-6lowpan && ./autogen.sh \
+    && ./configure --prefix=/usr/local --sysconfdir=/etc --mandir=/usr/share/man \
     && make && make install
 
 # Uninstall build dependencies

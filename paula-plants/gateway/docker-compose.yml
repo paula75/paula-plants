@@ -1,9 +1,9 @@
 version: '2'
 
 services:
-    radvd:
+    router:
         restart: always
-        build: ./radvd
+        build: ./router
         privileged: true
         network_mode: "host"
 
